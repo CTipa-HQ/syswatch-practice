@@ -4,16 +4,16 @@ CFLAGS = -std=c17 -Wall -Wextra -Wpedantic -g -Iinclude
 TARGET = syswatch
 
 SRC = src/main.c \
-      src/sistema.c \
-      src/partida.c \
-      src/misiones.c \
-      src/senales.c
+      src/system.c \
+      src/game.c \
+      src/missions.c \
+      src/signals.c
 
 OBJ = build/main.o \
-      build/sistema.o \
-      build/partida.o \
-      build/misiones.o \
-      build/senales.o
+      build/system.o \
+      build/game.o \
+      build/missions.o \
+      build/signals.o
 
 $(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET)
@@ -21,17 +21,17 @@ $(TARGET): $(OBJ)
 build/main.o: src/main.c
 	$(CC) $(CFLAGS) -c src/main.c -o build/main.o
 
-build/sistema.o: src/sistema.c include/sistema.h
-	$(CC) $(CFLAGS) -c src/sistema.c -o build/sistema.o
+build/system.o: src/system.c include/system.h
+	$(CC) $(CFLAGS) -c src/system.c -o build/system.o
 
-build/partida.o: src/partida.c include/partida.h
-	$(CC) $(CFLAGS) -c src/partida.c -o build/partida.o
+build/game.o: src/game.c include/game.h
+	$(CC) $(CFLAGS) -c src/game.c -o build/game.o
 
-build/misiones.o: src/misiones.c include/misiones.h
-	$(CC) $(CFLAGS) -c src/misiones.c -o build/misiones.o
+build/missions.o: src/missions.c include/missions.h
+	$(CC) $(CFLAGS) -c src/missions.c -o build/missions.o
 
-build/senales.o: src/senales.c include/senales.h
-	$(CC) $(CFLAGS) -c src/senales.c -o build/senales.o
+build/signals.o: src/signals.c include/signals.h
+	$(CC) $(CFLAGS) -c src/signals.c -o build/signals.o
 
 run: $(TARGET)
 	./$(TARGET)

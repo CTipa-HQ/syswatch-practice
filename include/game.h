@@ -1,5 +1,5 @@
-#ifndef PARTIDA_H
-#define PARTIDA_H
+#ifndef GAME_H
+#define GAME_H
 
 typedef struct {
     int lives;
@@ -9,6 +9,6 @@ typedef struct {
 } stats;
 
 stats start_game(void);
-void show_stats(stats game_data);
+void show_game_stats(stats game_data);
 
 #endif
